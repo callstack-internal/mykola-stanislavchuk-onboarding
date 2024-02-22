@@ -2,4 +2,8 @@
 
 # Weather app
 
-![alt text](screenshot.png)
+example of home screen
+<img src="screenshot.png" alt="screenshot" width="200"/>
+
+example of details screen
+<img src="screenshot2.png" alt="screenshot" width="200"/>
