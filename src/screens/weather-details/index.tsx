@@ -1,24 +1,38 @@
 import React from 'react';
 import {useEffect, useState} from 'react';
 import {ActivityIndicator, Text, View} from 'react-native';
+import {RootNavigationTypes} from '../../../App';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import Config from 'react-native-config';
 
-const WeatherDetails = ({route}) => {
+const WeatherDetails = ({
+  route,
+}: NativeStackScreenProps<RootNavigationTypes, 'WeatherDetails'>) => {
   const {coord} = route.params;
 
-  const [wheatherDetails, setWheatherDetails] = useState({});
+  const [wheatherDetails, setWheatherDetails] = useState<{
+    main: Record<string, any>;
+  }>({main: {}});
+
   const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
+
+  console.log(
+    `https://api.openweathermap.org/data/2.5/weather?lat=${coord.lat}&lon=${coord.lon}&appid=${Config.WHEATHER_API_KEY}`,
+  );
 
   useEffect(() => {
     setIsLoading(true);
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?lat=${coord.lat}&lon=${coord.lon}&appid=6a2275a5cacc5391a8d5bd2e7579488a`,
+      `https://api.openweathermap.org/data/2.5/weather?lat=${coord.lat}&lon=${coord.lon}&appid=${Config.WHEATHER_API_KEY}`,
     )
       .then(res => res.json())
       .then(res => {
         setWheatherDetails(res);
       })
       .catch(e => {
-        console.log('E', e);
+        console.log('error', e);
+        setIsError(true);
       })
       .finally(() => {
         setIsLoading(false);
@@ -31,6 +45,10 @@ const WeatherDetails = ({route}) => {
         <ActivityIndicator />
       </View>
     );
+  }
+
+  if (isError) {
+    return <Text>Something went wrong...</Text>;
   }
 
   return (

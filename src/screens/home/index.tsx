@@ -1,5 +1,6 @@
+import React from 'react';
 import {useEffect, useState} from 'react';
-import {ActivityIndicator, FlatList, View} from 'react-native';
+import {ActivityIndicator, FlatList, Text, View} from 'react-native';
 import Config from 'react-native-config';
 import WheatherRow from '../../components/wheather-row';
 import {CITIES_LIST} from '../../utils/constants';
@@ -7,6 +8,8 @@ import {CITIES_LIST} from '../../utils/constants';
 const Home = () => {
   const [wheather, setWheater] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(true);
+
   useEffect(() => {
     setIsLoading(true);
     fetch(
@@ -20,6 +23,7 @@ const Home = () => {
       })
       .catch(e => {
         console.log('E', e);
+        setIsError(true);
       })
       .finally(() => {
         setIsLoading(false);
@@ -38,6 +42,9 @@ const Home = () => {
     <FlatList
       data={wheather}
       keyExtractor={item => item.id}
+      ListFooterComponent={() =>
+        isError && <Text>Something went wrong with API fetch</Text>
+      }
       renderItem={({item}) => <WheatherRow wheather={item} />}></FlatList>
   );
 };

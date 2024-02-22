@@ -5,7 +5,12 @@ import React from 'react';
 import Home from './src/screens/home';
 import WeatherDetails from './src/screens/weather-details';
 
-const Stack = createNativeStackNavigator();
+export type RootNavigationTypes = {
+  Home: undefined;
+  WeatherDetails: {coord: {lat: number; lon: number}};
+};
+
+const Stack = createNativeStackNavigator<RootNavigationTypes>();
 
 function App(): React.JSX.Element {
   return (
