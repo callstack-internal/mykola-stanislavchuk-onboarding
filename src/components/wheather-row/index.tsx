@@ -12,6 +12,7 @@ const WheatherRow = ({wheather}: WheatherRowProps) => {
 
   return (
     <TouchableOpacity
+      testID="wheather-row"
       style={{
         marginBottom: 10,
         paddingBottom: 10,

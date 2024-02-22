@@ -1,0 +1,14 @@
+appId: org.onboarding.mstanis
+---
+- launchApp
+- tapOn:
+    id: wheather-row
+    index: 0
+- tapOn: 'Home'
+- tapOn:
+    id: wheather-row
+    index: 1
+- tapOn: 'Home'
+- tapOn:
+    id: wheather-row
+    index: 2
