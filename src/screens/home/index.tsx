@@ -1,6 +1,8 @@
 import {useEffect, useState} from 'react';
-import {ActivityIndicator, FlatList, Text, View} from 'react-native';
+import {ActivityIndicator, FlatList, View} from 'react-native';
+import Config from 'react-native-config';
 import WheatherRow from '../../components/wheather-row';
+import {CITIES_LIST} from '../../utils/constants';
 
 const Home = () => {
   const [wheather, setWheater] = useState([]);
@@ -8,7 +10,9 @@ const Home = () => {
   useEffect(() => {
     setIsLoading(true);
     fetch(
-      `https://api.openweathermap.org/data/2.5/group?id=5128581,5368361,4887398&appid=6a2275a5cacc5391a8d5bd2e7579488a`,
+      `https://api.openweathermap.org/data/2.5/group?id=${CITIES_LIST.join(
+        ',',
+      )}&appid=${Config.WHEATHER_API_KEY}`,
     )
       .then(res => res.json())
       .then(res => {
