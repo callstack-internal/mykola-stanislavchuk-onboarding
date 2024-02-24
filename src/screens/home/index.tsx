@@ -2,7 +2,7 @@ import React from 'react';
 import {useEffect, useState} from 'react';
 import {ActivityIndicator, FlatList, Text, View} from 'react-native';
 import Config from 'react-native-config';
-import WheatherRow from '../../components/wheather-row';
+import WheatherRow from '../../components/weather-row';
 import {CITIES_LIST} from '../../utils/constants';
 
 const Home = () => {
@@ -45,7 +45,7 @@ const Home = () => {
       ListFooterComponent={() =>
         isError && <Text>Something went wrong with API fetch</Text>
       }
-      renderItem={({item}) => <WheatherRow wheather={item} />}></FlatList>
+      renderItem={({item}) => <WheatherRow weather={item} />}></FlatList>
   );
 };
 

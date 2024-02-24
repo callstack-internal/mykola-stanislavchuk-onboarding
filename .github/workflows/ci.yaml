@@ -1,0 +1,19 @@
+name: Jest on CI
+
+on:
+  push:
+    branches: main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install dependecies
+        run: npm ci
+
+      - name: Run test
+        run: npm test

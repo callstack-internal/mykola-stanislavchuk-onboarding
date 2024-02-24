@@ -2,13 +2,13 @@ import React from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {Image, Text, TouchableOpacity, View} from 'react-native';
 
-type WheatherRowProps = {
-  wheather: any;
+type WeatherRowProps = {
+  weather: any;
 };
 
-const WheatherRow = ({wheather}: WheatherRowProps) => {
+const WeatherRow = ({weather}: WeatherRowProps) => {
   const navigation = useNavigation();
-  const {name, main, coord, weather: details} = wheather;
+  const {name, main, coord, weather: details} = weather;
 
   return (
     <TouchableOpacity
@@ -56,7 +56,9 @@ const WheatherRow = ({wheather}: WheatherRowProps) => {
             flexDirection: 'column',
             alignItems: 'center',
           }}>
-          <Text style={{fontWeight: '600'}}>{name}</Text>
+          <Text style={{fontWeight: '600'}} testID="cityName">
+            {name}
+          </Text>
           <Text style={{fontWeight: '300'}}>{details[0].main}</Text>
         </View>
 
@@ -70,4 +72,4 @@ const WheatherRow = ({wheather}: WheatherRowProps) => {
   );
 };
 
-export default WheatherRow;
+export default WeatherRow;

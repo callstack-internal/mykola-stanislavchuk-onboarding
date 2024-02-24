@@ -1,0 +1,133 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Weather row should render correctly 1`] = `
+<View
+  accessibilityState={
+    {
+      "busy": undefined,
+      "checked": undefined,
+      "disabled": undefined,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "borderBottomWidth": 1,
+      "borderColor": "#ddd",
+      "marginBottom": 10,
+      "opacity": 1,
+      "paddingBottom": 10,
+      "paddingHorizontal": 10,
+    }
+  }
+  testID="wheather-row"
+>
+  <View
+    style={
+      {
+        "alignItems": "center",
+        "flex": 1,
+        "flexDirection": "row",
+        "gap": 16,
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "height": 50,
+          "position": "relative",
+          "width": 80,
+        }
+      }
+    >
+      <Image
+        height={50}
+        source={
+          {
+            "uri": "https://openweathermap.org/img/wn/undefined@2x.png",
+          }
+        }
+        style={
+          {
+            "left": 0,
+            "position": "absolute",
+            "top": 0,
+          }
+        }
+        width={50}
+      />
+    </View>
+    <View
+      style={
+        {
+          "alignItems": "center",
+          "flex": 1,
+          "flexDirection": "column",
+        }
+      }
+    >
+      <Text
+        style={
+          {
+            "fontWeight": "600",
+          }
+        }
+        testID="cityName"
+      >
+        Gothem
+      </Text>
+      <Text
+        style={
+          {
+            "fontWeight": "300",
+          }
+        }
+      >
+        snow
+      </Text>
+    </View>
+    <View
+      style={
+        {
+          "backgroundColor": "#9c3a5f",
+          "borderRadius": 50,
+          "padding": 8,
+        }
+      }
+    >
+      <Text
+        style={
+          {
+            "color": "#fff",
+          }
+        }
+      >
+        100 F
+      </Text>
+    </View>
+    <Text>
+      &gt;
+    </Text>
+  </View>
+</View>
+`;
