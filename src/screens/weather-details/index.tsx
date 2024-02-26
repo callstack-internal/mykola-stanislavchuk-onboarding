@@ -17,14 +17,10 @@ const WeatherDetails = ({
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
 
-  console.log(
-    `https://api.openweathermap.org/data/2.5/weather?lat=${coord.lat}&lon=${coord.lon}&appid=${Config.WHEATHER_API_KEY}`,
-  );
-
   useEffect(() => {
     setIsLoading(true);
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?lat=${coord.lat}&lon=${coord.lon}&appid=${Config.WHEATHER_API_KEY}`,
+      `https://api.openweathermap.org/data/2.5/weather?lat=${coord.lat}&lon=${coord.lon}&appid=${Config.WHEATHER_API_KEY}&units=metric`,
     )
       .then(res => res.json())
       .then(res => {

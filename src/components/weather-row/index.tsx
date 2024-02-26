@@ -27,7 +27,6 @@ const WeatherRow = ({weather}: WeatherRowProps) => {
       }}>
       <View
         style={{
-          flex: 1,
           flexDirection: 'row',
           alignItems: 'center',
           gap: 16,
@@ -64,7 +63,7 @@ const WeatherRow = ({weather}: WeatherRowProps) => {
 
         <View
           style={{backgroundColor: '#9c3a5f', borderRadius: 50, padding: 8}}>
-          <Text style={{color: '#fff'}}>{`${main.temp} F`}</Text>
+          <Text style={{color: '#fff'}}>{`${main.temp} C`}</Text>
         </View>
         <Text>{'>'}</Text>
       </View>
