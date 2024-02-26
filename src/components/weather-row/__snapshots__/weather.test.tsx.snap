@@ -45,7 +45,6 @@ exports[`Weather row should render correctly 1`] = `
     style={
       {
         "alignItems": "center",
-        "flex": 1,
         "flexDirection": "row",
         "gap": 16,
       }
@@ -122,7 +121,7 @@ exports[`Weather row should render correctly 1`] = `
           }
         }
       >
-        100 F
+        100 C
       </Text>
     </View>
     <Text>

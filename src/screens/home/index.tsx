@@ -1,6 +1,6 @@
 import React from 'react';
 import {useEffect, useState} from 'react';
-import {ActivityIndicator, Alert, FlatList, Text, View} from 'react-native';
+import {ActivityIndicator, FlatList, Text, View} from 'react-native';
 import Config from 'react-native-config';
 import WheatherRow from '../../components/weather-row';
 import {CITIES_LIST} from '../../utils/constants';
